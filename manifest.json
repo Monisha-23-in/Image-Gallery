@@ -1,0 +1,17 @@
+{
+  "name": "LUMORA — The Art of Seeing",
+  "short_name": "LUMORA",
+  "description": "An interactive editorial photography gallery showcasing stunning moments across Nature, Architecture, Portraits, and Travel.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c0d0e",
+  "theme_color": "#0c0d0e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMORA — The Art of Seeing | Photography Gallery</title>
+  <meta name="description" content="LUMORA is an interactive photography gallery celebrating 24 curated moments across Nature, Architecture, Portraits, and Travel.">
+  <meta name="keywords" content="photography gallery, editorial gallery, portfolio, responsive image gallery, CodeAlpha, frontend development">
+  <meta name="author" content="Moni">
+  <meta name="theme-color" content="#0c0d0e">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LUMORA — The Art of Seeing | Photography Gallery">
+  <meta property="og:description" content="An interactive photography gallery celebrating 24 curated moments across Nature, Architecture, Portraits, and Travel.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LUMORA — The Art of Seeing">
+  <meta name="twitter:description" content="An interactive photography gallery celebrating 24 curated moments across Nature, Architecture, Portraits, and Travel.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85">
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-charcoal">
+  <!-- Skip Link for Accessibility -->
+  <a href="#gallery" class="skip-link">Skip to Gallery Content</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand" aria-label="LUMORA Home">
+        <span class="logo-mark" aria-hidden="true">
+          <span class="logo-optic"></span>
+        </span>
+        <span class="brand-text">
+          <span class="brand-title">LUMORA</span>
+          <span class="brand-subtitle">The Art of Seeing</span>
+        </span>
+      </a>
+
+      <div class="header-center">
+        <span class="archive-badge">
+          <span class="pulse-dot"></span>
+          <span>Curated Collection</span>
+          <span class="badge-separator">/</span>
+          <span id="header-image-count" class="badge-count">24 Photos</span>
+        </span>
+      </div>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="nav-fav-toggle" class="header-fav-btn" type="button" aria-label="View Saved Favourites">
+          <svg class="icon heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="fav-badge" id="nav-fav-count">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+          <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+        </ul>
+        <div class="mobile-drawer-meta">
+          <span class="archive-vol">LUMORA PHOTO ARCHIVE</span>
+          <p>Celebrating the natural beauty, cities, and life around us.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content reveal-on-scroll">
+          <div class="hero-tag-wrap">
+            <span class="hero-tag">THE VISUAL ARCHIVE / VOL. 001</span>
+            <span class="hero-status">Curated Exhibition</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Every frame tells <br>
+            <span class="editorial-accent">a beautiful story.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to LUMORA. Explore a hand-picked collection of stunning photography capturing serene nature landscapes, bold modern architecture, real emotional portraits, and inspiring travel destinations across the world.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#gallery" class="btn btn-primary" id="hero-explore-btn">
+              <span>Explore Gallery</span>
+              <svg class="icon btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-secondary">
+              <span>About Project</span>
+            </a>
+          </div>
+
+          <div class="hero-specs">
+            <div class="spec-item">
+              <span class="spec-number">24</span>
+              <span class="spec-label">Curated Photos</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-number">04</span>
+              <span class="spec-label">Categories</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-item">
+              <span class="spec-number">100%</span>
+              <span class="spec-label">High Resolution</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-on-scroll">
+          <div class="hero-image-card">
+            <div class="hero-image-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85" 
+                alt="Dawn light breaking over misty mountain reflections in Yosemite Valley" 
+                class="hero-img"
+                loading="eager"
+              >
+              <div class="hero-image-glare"></div>
+            </div>
+            
+            <div class="hero-caption-card">
+              <div class="caption-header">
+                <span class="caption-index">FEATURED PHOTO // 01</span>
+                <span class="caption-badge">Editor's Pick</span>
+              </div>
+              <h2 class="caption-title">Morning in Yosemite Valley</h2>
+              <div class="caption-meta">
+                <span>By Bailey Zindel</span>
+                <span class="dot-sep">•</span>
+                <span>California, USA</span>
+              </div>
+            </div>
+
+            <div class="hero-watermark">LUMORA 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#gallery" class="scroll-cue" aria-label="Scroll down to gallery">
+        <span class="cue-mouse">
+          <span class="cue-wheel"></span>
+        </span>
+        <span class="cue-text">Scroll to Browse</span>
+      </a>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-container">
+        
+        <!-- Section Header -->
+        <div class="gallery-header reveal-on-scroll">
+          <div class="gallery-title-group">
+            <span class="section-pretitle">PHOTO COLLECTION</span>
+            <h2 class="section-title">Explore The Gallery</h2>
+            <p class="section-lead">Choose a category below or search for your favorite photos by title, artist, or place.</p>
+          </div>
+
+          <!-- Search & Filter Bar -->
+          <div class="gallery-controls">
+            <!-- Search Input -->
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                id="gallery-search" 
+                class="search-input" 
+                placeholder="Search by title, photographer, or place..." 
+                aria-label="Search gallery images"
+                autocomplete="off"
+              >
+              <button type="button" id="clear-search" class="clear-search-btn" aria-label="Clear search query" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Favourites View Toggle Pill -->
+            <div class="filter-pills-row">
+              <div class="category-filters" role="tablist" aria-label="Image categories">
+                <button type="button" class="filter-btn active" data-category="all" role="tab" aria-selected="true">
+                  <span>All Photos</span>
+                  <span class="filter-count" id="count-all">24</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="nature" role="tab" aria-selected="false">
+                  <span>Nature</span>
+                  <span class="filter-count" id="count-nature">6</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="architecture" role="tab" aria-selected="false">
+                  <span>Architecture</span>
+                  <span class="filter-count" id="count-architecture">6</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="portraits" role="tab" aria-selected="false">
+                  <span>Portraits</span>
+                  <span class="filter-count" id="count-portraits">6</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="travel" role="tab" aria-selected="false">
+                  <span>Travel</span>
+                  <span class="filter-count" id="count-travel">6</span>
+                </button>
+                <button type="button" class="filter-btn fav-filter" data-category="favourites" role="tab" aria-selected="false">
+                  <svg class="icon fav-inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  <span>Saved</span>
+                  <span class="filter-count" id="count-fav">0</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Query / Status Feedback -->
+          <div class="gallery-status-bar" id="gallery-status-bar">
+            <span class="status-text" id="status-text">Showing 24 photos</span>
+            <button type="button" id="reset-filters-btn" class="reset-link" hidden>Reset filters</button>
+          </div>
+        </div>
+
+        <!-- Asymmetric Masonry Image Grid -->
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+          <!-- Dynamically injected via script.js -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No photos found</h3>
+          <p class="empty-text">We couldn't find any photos matching what you typed. Try checking your spelling or choose another category from the buttons above.</p>
+          <button type="button" class="btn btn-secondary" id="empty-reset-btn">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial About Section -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-grid reveal-on-scroll">
+          <div class="about-col-left">
+            <span class="section-pretitle">OUR STORY</span>
+            <h2 class="about-heading">
+              Capturing moments that <br>
+              <span class="editorial-accent">touch the heart.</span>
+            </h2>
+            <div class="about-signature">
+              <span class="sig-title">CREATIVE CURATION</span>
+              <span class="sig-team">LUMORA Photography Gallery • 2026</span>
+            </div>
+          </div>
+
+          <div class="about-col-right">
+            <p class="about-lead">
+              LUMORA was created to celebrate the beauty of visual storytelling in our everyday world.
+            </p>
+            <p class="about-body">
+              Every photograph in this gallery was selected to show the wonder of life — from the peaceful calm of misty forests and desert dunes, to the modern symmetry of city skylines, the honest emotion in human portraits, and the unforgettable magic of travel adventures.
+            </p>
+            
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <span class="pillar-num">01 / NATURE & LIFE</span>
+                <h3 class="pillar-title">Real Moments</h3>
+                <p class="pillar-desc">True, authentic photographs that celebrate natural light and quiet feelings.</p>
+              </div>
+              <div class="pillar-card">
+                <span class="pillar-num">02 / ARTIST CREDITS</span>
+                <h3 class="pillar-title">Verified Creators</h3>
+                <p class="pillar-desc">Honoring talented photographers with clear names and proper credit.</p>
+              </div>
+              <div class="pillar-card">
+                <span class="pillar-num">03 / EXPERIENCE</span>
+                <h3 class="pillar-title">Smooth & Clean</h3>
+                <p class="pillar-desc">Crafted with fast performance, smooth animations, and friendly mobile design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full-Screen Lightbox Modal -->
+  <div 
+    class="lightbox" 
+    id="lightbox" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-label="Image Lightbox Viewer"
+    hidden
+  >
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    
+    <div class="lightbox-shell" id="lightbox-shell">
+      <!-- Top Bar: Navigation Index & Close Button -->
+      <div class="lightbox-topbar">
+        <div class="lightbox-index-badge">
+          <span class="lb-current" id="lb-current">01</span>
+          <span class="lb-slash">/</span>
+          <span class="lb-total" id="lb-total">24</span>
+        </div>
+
+        <div class="lightbox-top-actions">
+          <button type="button" class="lb-btn lb-fav-btn" id="lb-fav-btn" aria-label="Toggle favourite for current image">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+          
+          <button type="button" class="lb-btn lb-close-btn" id="lb-close-btn" aria-label="Close Lightbox (Esc)">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Stage: Image and Arrow Controls -->
+      <div class="lightbox-stage">
+        <button type="button" class="lb-nav-arrow lb-prev" id="lb-prev-btn" aria-label="Previous photograph (Left Arrow)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-view-area" id="lightbox-view-area">
+          <div class="lightbox-loader" id="lb-loader" aria-hidden="true"></div>
+          <img 
+            src="" 
+            alt="" 
+            id="lb-image" 
+            class="lightbox-img"
+          >
+        </div>
+
+        <button type="button" class="lb-nav-arrow lb-next" id="lb-next-btn" aria-label="Next photograph (Right Arrow)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom Bar: Metadata & Simple Caption -->
+      <div class="lightbox-caption-bar" id="lightbox-caption-bar">
+        <div class="lb-meta-left">
+          <span class="lb-category" id="lb-category">Nature</span>
+          <h3 class="lb-title" id="lb-title">Photograph Title</h3>
+          <p class="lb-caption" id="lb-caption">Detailed photograph description.</p>
+        </div>
+
+        <div class="lb-meta-right">
+          <div class="lb-photographer-box">
+            <span class="lb-by">PHOTOGRAPHER</span>
+            <span class="lb-artist" id="lb-artist">Bailey Zindel</span>
+            <span class="lb-source">Verified Photography Artist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-wrap">
+          <a href="#hero" class="brand footer-brand">
+            <span class="logo-mark" aria-hidden="true">
+              <span class="logo-optic"></span>
+            </span>
+            <span class="brand-text">
+              <span class="brand-title">LUMORA</span>
+              <span class="brand-subtitle">The Art of Seeing</span>
+            </span>
+          </a>
+          <p class="footer-tagline">
+            An interactive photography gallery project developed for the CodeAlpha Frontend Development Internship. Built cleanly with semantic HTML5, modern CSS3, and vanilla JavaScript.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-nav-col">
+            <span class="footer-heading">NAVIGATION</span>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#gallery">Photo Gallery</a></li>
+              <li><a href="#about">About Project</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-col">
+            <span class="footer-heading">CATEGORIES</span>
+            <ul class="footer-links">
+              <li><button type="button" class="footer-cat-link" data-filter="nature">Nature</button></li>
+              <li><button type="button" class="footer-cat-link" data-filter="architecture">Architecture</button></li>
+              <li><button type="button" class="footer-cat-link" data-filter="portraits">Portraits</button></li>
+              <li><button type="button" class="footer-cat-link" data-filter="travel">Travel</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          © <span id="current-year">2026</span> LUMORA Photography Gallery. All rights reserved.
+        </p>
+        <p class="attribution-notice">
+          All photographs are sourced from verified professional photographers via Unsplash's free creative license. Full credit belongs to each individual artist.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
